@@ -21,7 +21,7 @@ module start_req_gen
   always_ff @ (posedge clk or posedge rst)
     if (rst)
       n_req <= '0;
-  else if (start_rdy & init_rdy)
+  else if (start_rdy)
       n_req <= n_req + 4'd1;
 
   assign start_vld = n_req != 4'd8;
@@ -91,9 +91,10 @@ module memory(
 );
   Pointer mem[n - 1: 0][Lat - 1: 0];
   Pointer rdarray[Lat - 1: 0][Lat - 1: 0];
-  logic [logLat - 1: 0] push_ptr;
+  logic [logLat - 1: 0] push_ptr, push_ptr_next;
   Pointer base;
   
+  assign push_ptr_next = (push_ptr + 1) % Lat;
   assign rd = rdarray[Lat - 1];
   
   always_ff @ (posedge clk) begin
@@ -113,7 +114,7 @@ module memory(
         end else begin
           mem[base][push_ptr] <= wd;
         end
-        push_ptr <= wd == 0 ? 0 : (push_ptr + 1) % Lat;
+        push_ptr <= wd == 0 ? 0 : push_ptr_next;
     end
   end
 endmodule
@@ -129,7 +130,24 @@ module pr_en(
         out = i;
   end 
 endmodule
-    
+
+module filter(
+  input Pointer in[Lat - 1: 0],
+  output Pointer out[Lat - 1: 0]
+);
+  logic [logLat: 0] code;
+  
+  pr_en i_pr_en(
+    .in(in),
+    .out(code)
+  );
+  genvar i;        
+  generate
+    for (i = 0; i < Lat ; i++)
+      assign out[i] = i < code ? in[i] : 0;
+  endgenerate 
+endmodule
+
 module ptr_seq_gen
 (
   input clk,
@@ -146,11 +164,13 @@ module ptr_seq_gen
   
   Pointer cur;
   wire Pointer ptr_next;
-  logic cur_vld;
+  logic cur_vld, is_data_ready;
   
-  Pointer ra, rd[Lat - 1: 0], buffer[Lat - 1: 0];
-  logic [logLat - 1: 0] pop_ptr, code;
+  Pointer ra, buffer[Lat - 1: 0], rd[Lat - 1: 0], raw_data[Lat - 1: 0], data[Lat - 1: 0], cur_out, cur_addr;
+  logic [logLat - 1: 0] pop_ptr, pop_ptr_next;
+  logic ptr_cycle_counter;
   
+  assign pop_ptr_next = (pop_ptr + 1) % Lat;
   
   memory i_memory(
     .rst(rst),
@@ -159,20 +179,31 @@ module ptr_seq_gen
     .wa(init_ptr),
     .wd(init_ptr_next),
     .ra(ra),
-    .rd(rd) // ptr_next
+    .rd(raw_data) // ptr_next
   );
   
-  pr_en i_pr_en(
-    .in(buffer),
-    .out(code)
+  filter i_filter(
+    .in(raw_data),
+    .out(data)
   );
-  
-  assign ptr_next = buffer[pop_ptr];
   
   always_comb
   begin
     `ifdef LONG_PATH_NO_GAP
     // Long path, no gap - check with Qflow
+    
+    if (pop_ptr_next == 0 && ptr_cycle_counter == 1)
+      buffer = data;
+    
+    cur_addr = 0;
+    if (pop_ptr_next == 0 && buffer[Lat - 1] != 0)
+      cur_addr = buffer[Lat - 1];
+    
+    if (cur_addr == 0)
+      cur_addr = start;
+    
+    cur_out = buffer[pop_ptr];
+    
     `else
     // short path, gap - check with Qflow
 
@@ -184,31 +215,28 @@ module ptr_seq_gen
       cur = '0;
 
     `endif
-    cur_vld = (buffer[pop_ptr] != '0);
+    cur_vld = (cur_out != '0);
   end
 
-  always_ff @ (posedge clk or posedge rst)
-    if (rst | init_vld) begin
-      out_ptr_vld <= '0;
+  always_ff @ (posedge clk)
+    if (init_vld) begin
       pop_ptr <= 0;
+      ptr_cycle_counter <= 0;
       for (int i = '0; i < Lat; i = i + 1) 
         buffer[i] <= '0;
     end else begin
-      if (pop_ptr == Lat - 1)
-        buffer <= rd;
-      out_ptr_vld <= cur_vld;
-      pop_ptr <= (pop_ptr + 1) % Lat;
+      ra <= cur_addr;
+      pop_ptr <= pop_ptr_next;
+      if (pop_ptr_next == 0)
+        ptr_cycle_counter <= 1;
     end
 
-  assign start_cond = start_vld && init_rdy && cur_vld;
-  
   always_ff @ (posedge clk) begin
-    ra <= code != Lat ? start : buffer[Lat - 1];
-    out_ptr <= pop_ptr == Lat - 1 ? rd['0] : buffer[pop_ptr];
+    out_ptr <= cur_out;
   end
 
   `ifdef LONG_PATH_NO_GAP
-  assign start_rdy = code != Lat && pop_ptr == 0;
+  assign start_rdy = buffer[Lat - 1] == 0 && pop_ptr_next == 0 && ~init_vld;
   `else
   assign start_rdy = ~cur_vld & lat_counter == 0;
   `endif
