@@ -6,7 +6,9 @@ parameter n     = 16,
           logLatPlus1 = $clog2(Lat + 1),
           logLat = $clog2(Lat);
 
+
 typedef logic [Width - 1:0] Pointer;
+typedef Pointer [Lat: 0] Record;
 
 
 module start_req_gen
@@ -37,6 +39,7 @@ module start_req_gen
     endcase
 
 endmodule
+
 
 module init(
   input clk, rst,
@@ -81,53 +84,79 @@ module init(
         init_ptr <= first_elements[i + 1];
       end
     end
-  
 endmodule
+
+
+module accum(
+  input clk, rst, in_we,
+  input Pointer in_wa, in_wd,
   
-module memory(
-  input we, clk, rst,
-  input Pointer ra, wa, wd,
-  output Pointer rd[Lat: 0]
+  output logic out_we,
+  output Pointer out_wa,
+  output Record	out_wd
 );
-  Pointer mem[n - 1: 0][Lat: 0];
-  Pointer rdarray[Lat - 1: 0][Lat: 0];
+  Record cur;
   logic [logLatPlus1 - 1: 0] push_ptr, push_ptr_next;
-  Pointer base;
-  wire Pointer null_vector[Lat: 0];
   
   assign push_ptr_next = (push_ptr + 1) % (Lat + 1);
+  
+  filter i_filter(
+    .in(cur),
+    .out(out_wd)
+  );
+  
+  always_ff @ (posedge clk or posedge rst) begin
+    out_we <= '0;
+    if (rst) begin
+      push_ptr <= '0;
+    end else begin
+      if (in_we) begin
+        cur[push_ptr] = in_wd;
+        
+        if (push_ptr == '0)
+          out_wa <= in_wa;
+        
+        push_ptr <= (in_wd == '0) ? '0 : push_ptr_next;
+        
+        if (push_ptr_next == '0 || in_wd == '0)
+          out_we <= 1;
+      end
+    end
+  end
+endmodule
+  
+
+module memory(
+  input clk, rst, we,
+  input Pointer ra, wa,
+
+  input Record wd,
+  output Record rd
+);
+  Record mem[n], rdarray[Lat];
+  wire Record null_record;
+  
   assign rd = rdarray[Lat - 1];
   
   genvar i;
   generate
     for (i = 0; i <= Lat; i = i + 1)
-      assign null_vector[i] = '0;
+      assign null_record[i] = '0;
   endgenerate
   
   always_ff @ (posedge clk) begin
-    rdarray[0] <= ra != 0 ? mem[ra] : null_vector;
+    rdarray[0] <= ra != 0 ? mem[ra] : null_record;
     for (int i = 1; i < Lat; i = i + 1)
       rdarray[i] <= rdarray[i - 1];
-  end
     
-  always_ff @ (posedge clk or posedge rst) begin
-    if (rst) begin
-      push_ptr <= '0;
-    end else begin
-      if (we)
-        if (push_ptr == 0) begin
-          base <= wa;
-          mem[wa][push_ptr] <= wd;
-        end else begin
-          mem[base][push_ptr] <= wd;
-        end
-        push_ptr <= wd == 0 ? 0 : push_ptr_next;
-    end
+    if (we)
+      mem[wa] <= wd;
   end
 endmodule
-
+  
+  
 module pr_en(
-  input Pointer in[Lat: 0],
+  input Record in,
   output logic  [logLatPlus1: 0] out
 );
   always @ (in) begin
@@ -138,9 +167,10 @@ module pr_en(
   end 
 endmodule
 
+
 module filter(
-  input Pointer in[Lat: 0],
-  output Pointer out[Lat: 0]
+  input Record in,
+  output Record out
 );
   logic [logLatPlus1: 0] code;
   
@@ -155,6 +185,7 @@ module filter(
   endgenerate 
 endmodule
 
+
 module ptr_seq_gen
 (
   input clk,
@@ -168,24 +199,28 @@ module ptr_seq_gen
   output Pointer out_ptr,
   output logic out_ptr_vld
 );
-  Pointer ra, cur_out, cur_addr, buffer[Lat: 0], raw_data[Lat: 0], data[Lat: 0];
+  Pointer ra, wa, cur_out, cur_addr;
+  Record rd, wd, data, buffer;
   logic [logLatPlus1 - 1: 0] pop_ptr, pop_ptr_next;
-  logic cur_vld, data_vld;
+  logic cur_vld, data_vld, we;
   
   assign pop_ptr_next = (pop_ptr + 1) % (Lat + 1);
   
-  memory i_memory(
+  accum i_accum(
     .rst(rst),
     .clk(clk),
-    .we(init_vld),
-    .wa(init_ptr),
-    .wd(init_ptr_next),
-    .ra(ra),
-    .rd(raw_data) // ptr_next
+    .in_we(init_vld),
+    .in_wa(init_ptr),
+    .in_wd(init_ptr_next),
+    .out_we(we),
+    .out_wa(wa),
+    .out_wd(wd)
   );
   
+  memory i_memory(.*);
+  
   filter i_filter(
-    .in(raw_data),
+    .in(rd),
     .out(data)
   );
   
@@ -201,7 +236,6 @@ module ptr_seq_gen
       cur = start;
     else
       cur = '0;
-
     
     `else
     // short path, gap - check with Qflow
@@ -242,6 +276,7 @@ module ptr_seq_gen
   `endif
   
 endmodule
+
 
 module req_gen(
   input        clk,
