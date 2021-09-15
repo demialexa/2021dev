@@ -1,6 +1,6 @@
 //`define LONG_PATH_NO_GAP
 
-parameter n     = 256,
+parameter n     = 16,
           w_ptr = $clog2 (n);
 
 typedef logic [w_ptr - 1:0] ptr_t;
@@ -17,16 +17,11 @@ module start_req_gen
 
   logic [3:0] n_req;
 
-  always_ff @ (posedge clk or posedge rst)
+  always_ff @ (posedge clk)
     if (rst)
       n_req <= '0;
     else if (start_rdy)
       n_req <= n_req + 4'd1;
-
-  /*
-  assign start_vld = 1'b1;
-  assign start     = ptr_t' (9);
-  */
 
   assign start_vld = n_req != 4'd8;
 
@@ -55,7 +50,7 @@ module ptr_seq_gen
   output logic out_ptr_vld
 );
 
-  wire ptr_t [n - 1:0] next =
+	ptr_t next[n] =
   '{
      1:  5,  5:  3,  3: 10, 10: 0,
      2:  4,  4:  0,
@@ -74,7 +69,7 @@ module ptr_seq_gen
     cur = '0;
     
     `ifdef LONG_PATH_NO_GAP
-    // Long path, no gap - check with Qflow
+    // Long path, no gap
     
     if (out_ptr_vld)
       cur = next [out_ptr];
@@ -83,7 +78,7 @@ module ptr_seq_gen
       cur = start;
 
     `else
-    // short path, gap - check with Qflow
+    // short path, gap
     
     if (out_ptr_vld)
       cur = next [out_ptr];
@@ -95,19 +90,21 @@ module ptr_seq_gen
     cur_vld = (cur != '0);
   end
 
-  always_ff @ (posedge clk or posedge rst)
-    if (rst)
-      out_ptr_vld <= '0;
-    else
+  always_ff @ (posedge clk) begin
+    if (rst) begin
+      out_ptr_vld <= 0;
+		out_ptr <= '0;
+    end else begin
       out_ptr_vld <= cur_vld;
-
-  always_ff @ (posedge clk)
-    out_ptr <= cur;
+	   out_ptr <= cur;
+	end
+  end
+    
 
   `ifdef LONG_PATH_NO_GAP
   assign start_rdy = cur == '0 | next [cur] == '0;
   `else
-  assign start_rdy = ~ cur_vld;
+  assign start_rdy = ~cur_vld;
   `endif
   
 endmodule
@@ -118,6 +115,7 @@ module req_gen(
   output ptr_t out_ptr,
   output       out_ptr_vld
 );
+
   
   ptr_t start;
   wire start_vld, start_rdy;

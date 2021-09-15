@@ -7,7 +7,7 @@ parameter n     = 16,
           logLat = $clog2(Lat);
 
 
-typedef logic [Width - 1:0] Pointer;
+typedef logic [Width-1: 0] Pointer;
 typedef Pointer [Lat: 0] Record;
 
 
@@ -98,20 +98,21 @@ module accum(
   Record cur;
   logic [logLatPlus1 - 1: 0] push_ptr, push_ptr_next;
   
-  assign push_ptr_next = (push_ptr + 1) % (Lat + 1);
-  
+  assign push_ptr_next = push_ptr == Lat ? 0 : push_ptr + 1;
+
   filter i_filter(
     .in(cur),
     .out(out_wd)
   );
   
   always_ff @ (posedge clk or posedge rst) begin
-    out_we <= '0;
     if (rst) begin
       push_ptr <= '0;
+		out_we <= 0;
     end else begin
+	   out_we <= 0;
       if (in_we) begin
-        cur[push_ptr] = in_wd;
+        cur[push_ptr] <= in_wd;
         
         if (push_ptr == '0)
           out_wa <= in_wa;
@@ -120,8 +121,8 @@ module accum(
         
         if (push_ptr_next == '0 || in_wd == '0)
           out_we <= 1;
-      end
-    end
+		end
+   end
   end
 endmodule
   
@@ -134,14 +135,15 @@ module memory(
   output Record rd
 );
   Record mem[n], rdarray[Lat];
-  wire Record null_record;
+  Record null_record;
   
   assign rd = rdarray[Lat - 1];
   
   genvar i;
   generate
-    for (i = 0; i <= Lat; i = i + 1)
+    for (i = 0; i <= Lat; i = i + 1) begin : gen_block
       assign null_record[i] = '0;
+	end
   endgenerate
   
   always_ff @ (posedge clk) begin
@@ -180,8 +182,9 @@ module filter(
   );
   genvar i;        
   generate
-    for (i = 0; i <= Lat; i++)
+    for (i = 0; i <= Lat; i++) begin : gen_block
       assign out[i] = i < code ? in[i] : 0;
+    end
   endgenerate 
 endmodule
 
@@ -204,7 +207,7 @@ module ptr_seq_gen
   logic [logLatPlus1 - 1: 0] pop_ptr, pop_ptr_next;
   logic cur_vld, data_vld, we;
   
-  assign pop_ptr_next = (pop_ptr + 1) % (Lat + 1);
+  assign pop_ptr_next = pop_ptr == Lat ? 0 : pop_ptr + 1;
   
   accum i_accum(
     .rst(rst),
@@ -239,6 +242,10 @@ module ptr_seq_gen
     
     `else
     // short path, gap - check with Qflow
+	 if (!data_vld)
+		 for (int i = '0; i <= Lat; i = i + 1) 
+			  buffer[i] = '0;
+		
     cur_addr = 0;
     if (pop_ptr == 0) begin
       if (data_vld == 1)
@@ -253,14 +260,13 @@ module ptr_seq_gen
   end
 
   always_ff @ (posedge clk) begin
-    out_ptr <= cur_out;
-    if (init_vld) begin
+    if (rst || init_vld) begin
+      out_ptr 			<= 0;
       out_ptr_vld 		 <= 0;
       data_vld			 <= '0;
       pop_ptr			 <= '0;
-      for (int i = '0; i <= Lat; i = i + 1) 
-        buffer[i] 		 <= '0;
     end else begin
+      out_ptr <= cur_out;
       out_ptr_vld		 <= cur_vld;
       if (pop_ptr_next == 0)
         data_vld 		 <= 1;

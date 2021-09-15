@@ -1,4 +1,4 @@
-//`define LONG_PATH_NO_GAP
+`define LONG_PATH_NO_GAP
 
 parameter n     = 16,
           Width = $clog2 (n),
@@ -10,7 +10,7 @@ typedef logic [Width - 1:0] Pointer;
 
 module start_req_gen
 (
-  input clk, rst, start_rdy, init_rdy,
+  input clk, rst, start_rdy,
   output Pointer start,
   output       start_vld
 );
@@ -20,7 +20,7 @@ module start_req_gen
   always_ff @ (posedge clk or posedge rst)
     if (rst)
       n_req <= '0;
-  else if (start_rdy & init_rdy)
+  else if (start_rdy)
       n_req <= n_req + 4'd1;
 
   assign start_vld = n_req != 4'd8;
@@ -40,7 +40,7 @@ endmodule
 module init(
   input clk, rst,
   output Pointer init_ptr, init_ptr_next,
-  output init_vld, init_rdy
+  output init_vld
 );
   logic [Width: 0] i; // 1 bit wider then Pointer to prevent overflow
   
@@ -57,7 +57,6 @@ module init(
   assign init_ptr= i[Width - 1: 0];
   assign init_ptr_next = next[init_ptr];
   assign init_vld = i < n;
-  assign init_rdy = ~init_vld;
   
   always_ff @ (posedge clk or posedge rst)
     if (rst)
@@ -67,19 +66,19 @@ module init(
   
 endmodule
   
-module lat_memory(
+module memory(
   input we, clk,
   input Pointer ra, wa, wd,
   output Pointer rd
 );
-  Pointer mem[n - 1: 0];
-  Pointer rdarray[Lat - 1: 0];
+  Pointer mem[n];
+  Pointer rdarray[Lat];
   
   always_ff @ (posedge clk) begin
     rdarray[0] <= mem[ra];
     for (int i = 1; i < Lat; i = i + 1)
       rdarray[i] <= rdarray[i - 1];
-  
+    
     if (we)
       mem[wa] <= wd;
   end
@@ -94,20 +93,19 @@ module ptr_seq_gen
   input rst,
   
   input [Width - 1: 0] init_ptr, init_ptr_next,
-  input init_rdy, init_vld, start_vld,
+  input init_vld, start_vld,
   input Pointer start,
   output start_rdy,
 
   output Pointer out_ptr,
-  output logic out_ptr_vld
+  output wire out_ptr_vld
 );
-  
   logic [lat_counterWidth: 0] lat_counter;
   Pointer cur;
-  wire Pointer ptr_next;
-  logic cur_vld;
+  Pointer ptr_next;
+  logic cur_vld, ptr_vld;
   
-  lat_memory i_lat_memory(
+  memory i_memory(
     .clk(clk),
     .we(init_vld),
     .wa(init_ptr),
@@ -116,51 +114,51 @@ module ptr_seq_gen
     .rd(ptr_next)
   );
   
-  always_comb
+  always_latch
   begin
-    if (lat_counter == '0) begin
+      if (lat_counter == '0) begin
       `ifdef LONG_PATH_NO_GAP
       // Long path, no gap - check with Qflow
-    
-      if (out_ptr_vld)
-        cur = ptr_next;
-      else
-        cur=0;
+			if (ptr_vld)
+			  cur = ptr_next;
+			else
+			  cur=0;
 
-      if (cur == '0 & start_vld & init_rdy)
+      if (cur == '0 && start_vld && ~init_vld)
         cur = start;
       `else
       // short path, gap - check with Qflow
 
-      if (out_ptr_vld)
+      if (ptr_vld)
         cur = ptr_next;
-      else if (start_vld & init_rdy)
+      else if (start_vld && ~init_vld)
         cur = start;
       else
         cur = '0;
 
       `endif
-    end
+	 end
     cur_vld = (cur != '0);
   end
-
-  always_ff @ (posedge clk or posedge rst)
-    if (rst | init_vld) begin
-      out_ptr_vld <= '0;
+  
+  always_ff @ (posedge clk) begin
+    if (rst || init_vld) begin
+      ptr_vld <= '0;
   	  lat_counter <= '0;
     end else begin
-      out_ptr_vld <= cur_vld;
+      ptr_vld <= cur_vld;
       lat_counter <= lat_counter == Lat ? 0 : lat_counter + 1;
     end
-
-  always_ff @ (posedge clk)
     out_ptr <= cur;
+  end
 
   `ifdef LONG_PATH_NO_GAP
-  assign start_rdy = (~cur_vld | ptr_next == '0) & lat_counter == 0;
+  assign start_rdy = (~cur_vld || ptr_next == '0) && lat_counter == 0 && ~init_vld;
   `else
-  assign start_rdy = ~cur_vld & lat_counter == 0;
+  assign start_rdy = ~cur_vld && lat_counter == 0 &&  ~init_vld;
   `endif
+  
+  assign out_ptr_vld = lat_counter == 1 ? ptr_vld : 0;
   
 endmodule
 
@@ -172,7 +170,7 @@ module req_gen(
 );
   
   Pointer start, init_ptr, init_ptr_next;
-  wire start_vld, start_rdy, init_vld, init_rdy;
+  wire start_vld, start_rdy, init_vld;
 
   init i_init(.*);
   start_req_gen i_start_req_gen (.*);

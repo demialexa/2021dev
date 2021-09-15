@@ -1,4 +1,4 @@
-// `define LONG_PATH_NO_GAP
+`define LONG_PATH_NO_GAP
 
 parameter n     = 16,
           Width = $clog2 (n);
@@ -15,10 +15,10 @@ module start_req_gen
 
   logic [3:0] n_req;
 
-  always_ff @ (posedge clk or posedge rst)
+  always_ff @ (posedge clk)
     if (rst)
       n_req <= '0;
-  else if (start_rdy & ~init_vld)
+  else if (start_rdy && ~init_vld)
       n_req <= n_req + 4'd1;
 
   assign start_vld = n_req != 4'd8;
@@ -34,7 +34,6 @@ module start_req_gen
     endcase
 
 endmodule
-
 
 module init(
   input clk, rst,
@@ -57,15 +56,29 @@ module init(
   assign init_ptr_next = next[init_ptr];
   assign init_vld = i < n;
   
-  always_ff @ (posedge clk or posedge rst)
+  always_ff @ (posedge clk)
     if (rst)
       i <= '0;
   else if (init_vld)
       i <= i + 1;
   
 endmodule
-    
+  
+module regfile (
+  input we, clk,
+  input Pointer ra, wa, wd,
+  output Pointer rd
+);
+  Pointer regfile[n - 1: 0];
 
+  assign rd = ra ? regfile[ra] : '0;
+  
+  always_ff @ (posedge clk)
+    if (we)
+      regfile[wa] <= wd;
+  
+endmodule
+    
 module ptr_seq_gen
 (
   input clk,
@@ -80,9 +93,18 @@ module ptr_seq_gen
   output logic out_ptr_vld
 );
   
-  Pointer next[n - 1: 0];
   Pointer cur;
+  Pointer ptr_next;
   logic cur_vld;
+  
+  regfile i_regfile(
+    .clk(clk),
+    .we(init_vld),
+    .wa(init_ptr),
+    .wd(init_ptr_next),
+    .ra(out_ptr),
+    .rd(ptr_next)
+  );
   
   always_comb
   begin
@@ -92,7 +114,7 @@ module ptr_seq_gen
     // Long path, no gap - check with Qflow
     
     if (out_ptr_vld)
-      cur = next [out_ptr];
+      cur = ptr_next;
 
     if (cur == '0 & start_vld & ~init_vld)
       cur = start;
@@ -101,7 +123,7 @@ module ptr_seq_gen
     // short path, gap - check with Qflow
     
     if (out_ptr_vld)
-      cur = next [out_ptr];
+      cur = ptr_next;
     else if (start_vld & ~init_vld)
       cur = start;
 
@@ -110,26 +132,21 @@ module ptr_seq_gen
     cur_vld = (cur != '0);
   end
 
-  always_ff @ (posedge clk or posedge rst)
-    if (rst | init_vld)
+  always_ff @ (posedge clk) begin
+    if (rst)
       out_ptr_vld <= '0;
     else
       out_ptr_vld <= cur_vld;
-  
-  always_ff @ (posedge clk) begin
-    if (init_vld)
-      next[init_ptr] <= init_ptr_next;
     out_ptr <= cur;
   end
 
   `ifdef LONG_PATH_NO_GAP
-  assign start_rdy = cur == '0 | next[cur] == '0;
+  assign start_rdy = cur == '0 | ptr_next == '0;
   `else
   assign start_rdy = ~cur_vld;
   `endif
   
 endmodule
-
 
 module req_gen(
   input        clk,
