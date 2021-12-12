@@ -1,0 +1,475 @@
+Qflow static timing analysis logfile created on Fri 30 Apr 2021 08:51:54 PM MSK
+Running vesta static timing analysis
+vesta --summary reports --long req_gen.rtlnopwr.v /usr/share/qflow/tech/osu035/osu035_stdcells.lib
+----------------------------------------------
+Vesta static timing analysis tool
+for qflow 1.1.121
+(c) 2013-2018 Tim Edwards, Open Circuit Design
+----------------------------------------------
+
+Parsing library "osu035_stdcells"
+End of library at line 6636
+Parsing module "req_gen"
+Lib Read:  Processed 6637 lines.
+Verilog netlist read:  Processed 139 lines.
+Number of paths analyzed:  22
+
+Top 20 maximum delay paths:
+Path DFFSR_2/CLK to DFFSR_5/D delay 2707.27 ps
+      0.0 ps                       clk:              ->    DFFSR_2/CLK
+    572.0 ps  i_start_req_gen_n_req_0_:    DFFSR_2/Q ->  NOR2X1_12/B
+    889.5 ps                      _76_:  NOR2X1_12/Y -> NAND3X1_18/C
+   1051.3 ps   i_ptr_seq_gen_start_vld: NAND3X1_18/Y ->  NAND2X1_9/A
+   1338.0 ps                      _14_:  NAND2X1_9/Y ->    INVX4_1/A
+   1553.7 ps                      _15_:    INVX4_1/Y ->  OAI21X1_9/C
+   1679.3 ps                      _72_:  OAI21X1_9/Y ->   AND2X2_9/A
+   1822.3 ps                       _2_:   AND2X2_9/Y ->  AND2X2_11/B
+   1945.5 ps                      _11_:  AND2X2_11/Y -> NAND3X1_17/B
+   2067.2 ps                      _12_: NAND3X1_17/Y ->  NOR2X1_11/B
+   2331.7 ps   i_ptr_seq_gen_start_rdy:  NOR2X1_11/Y -> NAND3X1_19/C
+   2642.1 ps                      _80_: NAND3X1_19/Y ->   INVX1_14/A
+   2769.6 ps                      _83_:   INVX1_14/Y -> NAND3X1_20/C
+   2873.0 ps                      _84_: NAND3X1_20/Y ->  NAND2X1_7/B
+   2946.1 ps                   _74__3_:  NAND2X1_7/Y ->    DFFSR_5/D
+
+Path DFFSR_2/CLK to DFFSR_4/D delay 2570.01 ps
+      0.0 ps                       clk:              ->    DFFSR_2/CLK
+    572.0 ps  i_start_req_gen_n_req_0_:    DFFSR_2/Q ->  NOR2X1_12/B
+    889.5 ps                      _76_:  NOR2X1_12/Y -> NAND3X1_18/C
+   1051.3 ps   i_ptr_seq_gen_start_vld: NAND3X1_18/Y ->  NAND2X1_9/A
+   1338.0 ps                      _14_:  NAND2X1_9/Y ->    INVX4_1/A
+   1553.7 ps                      _15_:    INVX4_1/Y ->  OAI21X1_9/C
+   1679.3 ps                      _72_:  OAI21X1_9/Y ->   AND2X2_9/A
+   1822.3 ps                       _2_:   AND2X2_9/Y ->  AND2X2_11/B
+   1945.5 ps                      _11_:  AND2X2_11/Y -> NAND3X1_17/B
+   2067.2 ps                      _12_: NAND3X1_17/Y ->  NOR2X1_11/B
+   2331.7 ps   i_ptr_seq_gen_start_rdy:  NOR2X1_11/Y -> NAND3X1_19/C
+   2642.1 ps                      _80_: NAND3X1_19/Y ->  XNOR2X1_1/A
+   2808.9 ps                   _74__2_:  XNOR2X1_1/Y ->    DFFSR_4/D
+
+Path DFFSR_2/CLK to DFFSR_3/D delay 2489.43 ps
+      0.0 ps                       clk:              ->    DFFSR_2/CLK
+    572.0 ps  i_start_req_gen_n_req_0_:    DFFSR_2/Q ->  NOR2X1_12/B
+    889.5 ps                      _76_:  NOR2X1_12/Y -> NAND3X1_18/C
+   1051.3 ps   i_ptr_seq_gen_start_vld: NAND3X1_18/Y ->  NAND2X1_9/A
+   1338.0 ps                      _14_:  NAND2X1_9/Y ->    INVX4_1/A
+   1553.7 ps                      _15_:    INVX4_1/Y ->  OAI21X1_9/C
+   1679.3 ps                      _72_:  OAI21X1_9/Y ->   AND2X2_9/A
+   1822.3 ps                       _2_:   AND2X2_9/Y ->  AND2X2_11/B
+   1945.5 ps                      _11_:  AND2X2_11/Y -> NAND3X1_17/B
+   2067.2 ps                      _12_: NAND3X1_17/Y ->  NOR2X1_11/B
+   2331.7 ps   i_ptr_seq_gen_start_rdy:  NOR2X1_11/Y ->    OR2X2_1/B
+   2569.1 ps                      _77_:    OR2X2_1/Y ->  AND2X2_13/B
+   2683.2 ps                   _74__1_:  AND2X2_13/Y ->    DFFSR_3/D
+
+Path DFFSR_2/CLK to DFFSR_2/D delay 2286.42 ps
+      0.0 ps                       clk:              ->    DFFSR_2/CLK
+    572.0 ps  i_start_req_gen_n_req_0_:    DFFSR_2/Q ->  NOR2X1_12/B
+    889.5 ps                      _76_:  NOR2X1_12/Y -> NAND3X1_18/C
+   1051.3 ps   i_ptr_seq_gen_start_vld: NAND3X1_18/Y ->  NAND2X1_9/A
+   1338.0 ps                      _14_:  NAND2X1_9/Y ->    INVX4_1/A
+   1553.7 ps                      _15_:    INVX4_1/Y ->  OAI21X1_9/C
+   1679.3 ps                      _72_:  OAI21X1_9/Y ->   AND2X2_9/A
+   1822.3 ps                       _2_:   AND2X2_9/Y ->  AND2X2_11/B
+   1945.5 ps                      _11_:  AND2X2_11/Y -> NAND3X1_17/B
+   2067.2 ps                      _12_: NAND3X1_17/Y ->  NOR2X1_11/B
+   2331.7 ps   i_ptr_seq_gen_start_rdy:  NOR2X1_11/Y ->   XOR2X1_1/B
+   2525.2 ps                   _74__0_:   XOR2X1_1/Y ->    DFFSR_2/D
+
+Path DFFPOSX1_6/CLK to DFFPOSX1_1/D delay 2067.89 ps
+      0.0 ps                   clk:              -> DFFPOSX1_6/CLK
+    308.4 ps                _0__5_: DFFPOSX1_6/Q ->   NOR2X1_1/A
+    429.5 ps                  _16_:   NOR2X1_1/Y ->   AND2X2_1/A
+    789.3 ps                  _18_:   AND2X2_1/Y ->  NAND3X1_1/C
+   1110.2 ps                  _21_:  NAND3X1_1/Y ->  NAND3X1_4/B
+   1461.8 ps                  _29_:  NAND3X1_4/Y ->  OAI21X1_2/A
+   1628.2 ps                  _49_:  OAI21X1_2/Y ->  AOI22X1_1/D
+   1811.2 ps                  _50_:  AOI22X1_1/Y ->    INVX1_7/A
+   1899.9 ps  i_ptr_seq_gen_cur_0_:    INVX1_7/Y -> DFFPOSX1_1/D
+
+Path DFFSR_2/CLK to DFFSR_1/D delay 1883.1 ps
+      0.0 ps                       clk:              ->    DFFSR_2/CLK
+    572.0 ps  i_start_req_gen_n_req_0_:    DFFSR_2/Q ->  NOR2X1_12/B
+    889.5 ps                      _76_:  NOR2X1_12/Y -> NAND3X1_18/C
+   1051.3 ps   i_ptr_seq_gen_start_vld: NAND3X1_18/Y ->  NAND2X1_9/A
+   1338.0 ps                      _14_:  NAND2X1_9/Y ->    INVX4_1/A
+   1553.7 ps                      _15_:    INVX4_1/Y ->  OAI21X1_9/C
+   1679.3 ps                      _72_:  OAI21X1_9/Y ->   AND2X2_9/A
+   1822.3 ps                       _2_:   AND2X2_9/Y ->  NAND2X1_6/A
+   1927.6 ps                       _3_:  NAND2X1_6/Y ->  NOR2X1_10/A
+   2021.6 ps                       _4_:  NOR2X1_10/Y -> NAND3X1_15/B
+   2138.7 ps     i_ptr_seq_gen_cur_vld: NAND3X1_15/Y ->    DFFSR_1/D
+
+Path DFFPOSX1_6/CLK to DFFPOSX1_3/D delay 1734.07 ps
+      0.0 ps                   clk:              -> DFFPOSX1_6/CLK
+    308.4 ps                _0__5_: DFFPOSX1_6/Q ->   NOR2X1_1/A
+    429.5 ps                  _16_:   NOR2X1_1/Y ->   AND2X2_1/A
+    789.3 ps                  _18_:   AND2X2_1/Y ->  NAND3X1_1/C
+   1110.2 ps                  _21_:  NAND3X1_1/Y ->  NAND3X1_4/B
+   1461.8 ps                  _29_:  NAND3X1_4/Y ->   NOR2X1_8/A
+   1644.3 ps                  _58_:   NOR2X1_8/Y ->  OAI21X1_3/B
+   1767.6 ps                  _62_:  OAI21X1_3/Y ->  OAI21X1_4/C
+   1905.5 ps  i_ptr_seq_gen_cur_2_:  OAI21X1_4/Y -> DFFPOSX1_3/D
+
+Path DFFPOSX1_6/CLK to DFFPOSX1_4/D delay 1663.64 ps
+      0.0 ps                   clk:              -> DFFPOSX1_6/CLK
+    308.4 ps                _0__5_: DFFPOSX1_6/Q ->   NOR2X1_1/A
+    429.5 ps                  _16_:   NOR2X1_1/Y ->   AND2X2_1/A
+    789.3 ps                  _18_:   AND2X2_1/Y ->  NAND3X1_1/C
+   1110.2 ps                  _21_:  NAND3X1_1/Y ->  NAND3X1_4/B
+   1461.8 ps                  _29_:  NAND3X1_4/Y ->  OAI21X1_6/B
+   1631.8 ps                  _66_:  OAI21X1_6/Y ->  OAI21X1_7/C
+   1781.3 ps  i_ptr_seq_gen_cur_3_:  OAI21X1_7/Y -> DFFPOSX1_4/D
+
+Path DFFSR_2/CLK to DFFPOSX1_5/D delay 1413.86 ps
+      0.0 ps                       clk:              ->    DFFSR_2/CLK
+    572.0 ps  i_start_req_gen_n_req_0_:    DFFSR_2/Q ->  NOR2X1_12/B
+    889.5 ps                      _76_:  NOR2X1_12/Y -> NAND3X1_18/C
+   1051.3 ps   i_ptr_seq_gen_start_vld: NAND3X1_18/Y ->  NAND2X1_9/A
+   1338.0 ps                      _14_:  NAND2X1_9/Y ->    INVX4_1/A
+   1553.7 ps                      _15_:    INVX4_1/Y ->   AND2X2_5/A
+   1734.1 ps      i_ptr_seq_gen_cur_4_:   AND2X2_5/Y -> DFFPOSX1_5/D
+
+Path DFFSR_2/CLK to DFFPOSX1_6/D delay 1413.86 ps
+      0.0 ps                       clk:              ->    DFFSR_2/CLK
+    572.0 ps  i_start_req_gen_n_req_0_:    DFFSR_2/Q ->  NOR2X1_12/B
+    889.5 ps                      _76_:  NOR2X1_12/Y -> NAND3X1_18/C
+   1051.3 ps   i_ptr_seq_gen_start_vld: NAND3X1_18/Y ->  NAND2X1_9/A
+   1338.0 ps                      _14_:  NAND2X1_9/Y ->    INVX4_1/A
+   1553.7 ps                      _15_:    INVX4_1/Y ->   AND2X2_6/A
+   1734.1 ps      i_ptr_seq_gen_cur_5_:   AND2X2_6/Y -> DFFPOSX1_6/D
+
+Path DFFSR_2/CLK to DFFPOSX1_7/D delay 1413.86 ps
+      0.0 ps                       clk:              ->    DFFSR_2/CLK
+    572.0 ps  i_start_req_gen_n_req_0_:    DFFSR_2/Q ->  NOR2X1_12/B
+    889.5 ps                      _76_:  NOR2X1_12/Y -> NAND3X1_18/C
+   1051.3 ps   i_ptr_seq_gen_start_vld: NAND3X1_18/Y ->  NAND2X1_9/A
+   1338.0 ps                      _14_:  NAND2X1_9/Y ->    INVX4_1/A
+   1553.7 ps                      _15_:    INVX4_1/Y ->   AND2X2_7/A
+   1734.1 ps      i_ptr_seq_gen_cur_6_:   AND2X2_7/Y -> DFFPOSX1_7/D
+
+Path DFFSR_2/CLK to DFFPOSX1_8/D delay 1413.86 ps
+      0.0 ps                       clk:              ->    DFFSR_2/CLK
+    572.0 ps  i_start_req_gen_n_req_0_:    DFFSR_2/Q ->  NOR2X1_12/B
+    889.5 ps                      _76_:  NOR2X1_12/Y -> NAND3X1_18/C
+   1051.3 ps   i_ptr_seq_gen_start_vld: NAND3X1_18/Y ->  NAND2X1_9/A
+   1338.0 ps                      _14_:  NAND2X1_9/Y ->    INVX4_1/A
+   1553.7 ps                      _15_:    INVX4_1/Y ->   AND2X2_8/A
+   1734.1 ps      i_ptr_seq_gen_cur_7_:   AND2X2_8/Y -> DFFPOSX1_8/D
+
+Path DFFSR_2/CLK to DFFPOSX1_2/D delay 1388.13 ps
+      0.0 ps                       clk:              ->    DFFSR_2/CLK
+    572.0 ps  i_start_req_gen_n_req_0_:    DFFSR_2/Q ->  NOR2X1_12/B
+    889.5 ps                      _76_:  NOR2X1_12/Y -> NAND3X1_18/C
+   1051.3 ps   i_ptr_seq_gen_start_vld: NAND3X1_18/Y ->  NAND2X1_9/A
+   1338.0 ps                      _14_:  NAND2X1_9/Y ->    INVX4_1/A
+   1553.7 ps                      _15_:    INVX4_1/Y ->  AOI22X1_2/B
+   1734.5 ps                      _56_:  AOI22X1_2/Y ->    INVX1_8/A
+   1822.9 ps      i_ptr_seq_gen_cur_1_:    INVX1_8/Y -> DFFPOSX1_2/D
+
+Path DFFSR_1/CLK to output pin out_ptr_vld delay 865.324 ps
+      0.0 ps          clk:           -> DFFSR_1/CLK
+    645.0 ps          _1_: DFFSR_1/Q -> BUFX2_9/A
+    865.3 ps  out_ptr_vld: BUFX2_9/Y -> 
+
+Path DFFPOSX1_2/CLK to output pin out_ptr[1] delay 525.672 ps
+      0.0 ps         clk:              -> DFFPOSX1_2/CLK
+    379.1 ps      _0__1_: DFFPOSX1_2/Q ->    BUFX2_2/A
+    525.7 ps  out_ptr[1]:    BUFX2_2/Y -> 
+
+Path DFFPOSX1_3/CLK to output pin out_ptr[2] delay 524.047 ps
+      0.0 ps         clk:              -> DFFPOSX1_3/CLK
+    377.9 ps      _0__2_: DFFPOSX1_3/Q ->    BUFX2_3/A
+    524.0 ps  out_ptr[2]:    BUFX2_3/Y -> 
+
+Path DFFPOSX1_4/CLK to output pin out_ptr[3] delay 517.791 ps
+      0.0 ps         clk:              -> DFFPOSX1_4/CLK
+    373.1 ps      _0__3_: DFFPOSX1_4/Q ->    BUFX2_4/A
+    517.8 ps  out_ptr[3]:    BUFX2_4/Y -> 
+
+Path DFFPOSX1_1/CLK to output pin out_ptr[0] delay 515.786 ps
+      0.0 ps         clk:              -> DFFPOSX1_1/CLK
+    371.5 ps      _0__0_: DFFPOSX1_1/Q ->    BUFX2_1/A
+    515.8 ps  out_ptr[0]:    BUFX2_1/Y -> 
+
+Path DFFPOSX1_7/CLK to output pin out_ptr[6] delay 441.408 ps
+      0.0 ps         clk:              -> DFFPOSX1_7/CLK
+    309.9 ps      _0__6_: DFFPOSX1_7/Q ->    BUFX2_7/A
+    441.4 ps  out_ptr[6]:    BUFX2_7/Y -> 
+
+Path DFFPOSX1_5/CLK to output pin out_ptr[4] delay 441.408 ps
+      0.0 ps         clk:              -> DFFPOSX1_5/CLK
+    309.9 ps      _0__4_: DFFPOSX1_5/Q ->    BUFX2_5/A
+    441.4 ps  out_ptr[4]:    BUFX2_5/Y -> 
+
+Computed maximum clock frequency (zero slack) = 369.376 MHz
+-----------------------------------------
+
+Number of paths analyzed:  22
+
+Top 20 minimum delay paths:
+Path DFFPOSX1_5/CLK to output pin out_ptr[4] delay 229.037 ps
+      0.0 ps         clk:              -> DFFPOSX1_5/CLK
+    123.4 ps      _0__4_: DFFPOSX1_5/Q ->    BUFX2_5/A
+    229.0 ps  out_ptr[4]:    BUFX2_5/Y -> 
+
+Path DFFPOSX1_7/CLK to output pin out_ptr[6] delay 229.037 ps
+      0.0 ps         clk:              -> DFFPOSX1_7/CLK
+    123.4 ps      _0__6_: DFFPOSX1_7/Q ->    BUFX2_7/A
+    229.0 ps  out_ptr[6]:    BUFX2_7/Y -> 
+
+Path DFFPOSX1_6/CLK to output pin out_ptr[5] delay 229.904 ps
+      0.0 ps         clk:              -> DFFPOSX1_6/CLK
+    124.2 ps      _0__5_: DFFPOSX1_6/Q ->    BUFX2_6/A
+    229.9 ps  out_ptr[5]:    BUFX2_6/Y -> 
+
+Path DFFPOSX1_8/CLK to output pin out_ptr[7] delay 229.904 ps
+      0.0 ps         clk:              -> DFFPOSX1_8/CLK
+    124.2 ps      _0__7_: DFFPOSX1_8/Q ->    BUFX2_8/A
+    229.9 ps  out_ptr[7]:    BUFX2_8/Y -> 
+
+Path DFFPOSX1_1/CLK to output pin out_ptr[0] delay 382.846 ps
+      0.0 ps         clk:              -> DFFPOSX1_1/CLK
+    266.8 ps      _0__0_: DFFPOSX1_1/Q ->    BUFX2_1/A
+    382.8 ps  out_ptr[0]:    BUFX2_1/Y -> 
+
+Path DFFPOSX1_4/CLK to output pin out_ptr[3] delay 384.876 ps
+      0.0 ps         clk:              -> DFFPOSX1_4/CLK
+    268.6 ps      _0__3_: DFFPOSX1_4/Q ->    BUFX2_4/A
+    384.9 ps  out_ptr[3]:    BUFX2_4/Y -> 
+
+Path DFFPOSX1_3/CLK to output pin out_ptr[2] delay 391.778 ps
+      0.0 ps         clk:              -> DFFPOSX1_3/CLK
+    274.6 ps      _0__2_: DFFPOSX1_3/Q ->    BUFX2_3/A
+    391.8 ps  out_ptr[2]:    BUFX2_3/Y -> 
+
+Path DFFPOSX1_2/CLK to output pin out_ptr[1] delay 393.707 ps
+      0.0 ps         clk:              -> DFFPOSX1_2/CLK
+    276.3 ps      _0__1_: DFFPOSX1_2/Q ->    BUFX2_2/A
+    393.7 ps  out_ptr[1]:    BUFX2_2/Y -> 
+
+Path DFFSR_1/CLK to output pin out_ptr_vld delay 789.009 ps
+      0.0 ps          clk:           -> DFFSR_1/CLK
+    629.1 ps          _1_: DFFSR_1/Q -> BUFX2_9/A
+    789.0 ps  out_ptr_vld: BUFX2_9/Y -> 
+
+Path DFFPOSX1_1/CLK to DFFPOSX1_2/D delay 832.525 ps
+      0.0 ps                   clk:              -> DFFPOSX1_1/CLK
+    266.8 ps                _0__0_: DFFPOSX1_1/Q ->   NOR3X1_3/A
+    386.5 ps                  _52_:   NOR3X1_3/Y ->  NAND2X1_5/A
+    450.8 ps                  _53_:  NAND2X1_5/Y -> NAND3X1_11/A
+    608.9 ps                  _55_: NAND3X1_11/Y ->  AOI22X1_2/D
+    754.6 ps                  _56_:  AOI22X1_2/Y ->    INVX1_8/A
+    832.5 ps  i_ptr_seq_gen_cur_1_:    INVX1_8/Y -> DFFPOSX1_2/D
+
+Path DFFPOSX1_1/CLK to DFFPOSX1_3/D delay 890.442 ps
+      0.0 ps                   clk:              -> DFFPOSX1_1/CLK
+    266.8 ps                _0__0_: DFFPOSX1_1/Q ->   NOR2X1_7/A
+    364.0 ps                  _34_:   NOR2X1_7/Y ->  NAND3X1_6/A
+    501.1 ps                  _35_:  NAND3X1_6/Y -> NAND3X1_13/B
+    663.6 ps                  _61_: NAND3X1_13/Y ->  OAI21X1_3/A
+    760.5 ps                  _62_:  OAI21X1_3/Y ->  OAI21X1_4/C
+    890.4 ps  i_ptr_seq_gen_cur_2_:  OAI21X1_4/Y -> DFFPOSX1_3/D
+
+Path DFFPOSX1_2/CLK to DFFSR_1/D delay 925.308 ps
+      0.0 ps                    clk:              -> DFFPOSX1_2/CLK
+    276.3 ps                 _0__1_: DFFPOSX1_2/Q ->  AOI21X1_3/A
+    393.6 ps                   _69_:  AOI21X1_3/Y ->  OAI21X1_8/C
+    482.6 ps                   _70_:  OAI21X1_8/Y ->  AOI22X1_3/D
+    582.8 ps                   _71_:  AOI22X1_3/Y -> NAND3X1_15/C
+    635.5 ps  i_ptr_seq_gen_cur_vld: NAND3X1_15/Y ->    DFFSR_1/D
+
+Path DFFPOSX1_5/CLK to DFFPOSX1_4/D delay 1011.11 ps
+      0.0 ps                   clk:              -> DFFPOSX1_5/CLK
+    123.4 ps                _0__4_: DFFPOSX1_5/Q ->   NOR2X1_1/B
+    229.6 ps                  _16_:   NOR2X1_1/Y ->  NAND2X1_3/A
+    372.4 ps                  _44_:  NAND2X1_3/Y ->  OAI21X1_5/A
+    510.8 ps                  _65_:  OAI21X1_5/Y ->  OAI21X1_6/A
+    608.3 ps                  _66_:  OAI21X1_6/Y ->  OAI21X1_7/C
+    740.1 ps  i_ptr_seq_gen_cur_3_:  OAI21X1_7/Y -> DFFPOSX1_4/D
+
+Path DFFPOSX1_5/CLK to DFFPOSX1_1/D delay 1038.32 ps
+      0.0 ps                   clk:              -> DFFPOSX1_5/CLK
+    123.4 ps                _0__4_: DFFPOSX1_5/Q ->   NOR2X1_1/B
+    229.6 ps                  _16_:   NOR2X1_1/Y ->  NAND2X1_3/A
+    372.4 ps                  _44_:  NAND2X1_3/Y ->  AOI21X1_1/C
+    478.0 ps                  _47_:  AOI21X1_1/Y ->  AOI21X1_2/C
+    563.7 ps                  _48_:  AOI21X1_2/Y ->  OAI21X1_2/C
+    670.3 ps                  _49_:  OAI21X1_2/Y ->  AOI22X1_1/D
+    821.3 ps                  _50_:  AOI22X1_1/Y ->    INVX1_7/A
+    902.7 ps  i_ptr_seq_gen_cur_0_:    INVX1_7/Y -> DFFPOSX1_1/D
+
+Path DFFSR_2/CLK to DFFSR_2/D delay 1220.35 ps
+      0.0 ps                       clk:            ->  DFFSR_2/CLK
+    564.4 ps  i_start_req_gen_n_req_0_:  DFFSR_2/Q -> XOR2X1_1/A
+    710.5 ps                   _74__0_: XOR2X1_1/Y ->  DFFSR_2/D
+
+Path DFFSR_3/CLK to DFFSR_3/D delay 1257 ps
+      0.0 ps                       clk:             ->   DFFSR_3/CLK
+    565.5 ps  i_start_req_gen_n_req_1_:   DFFSR_3/Q ->   OR2X2_1/A
+    752.7 ps                      _77_:   OR2X2_1/Y -> AND2X2_13/B
+    866.7 ps                   _74__1_: AND2X2_13/Y ->   DFFSR_3/D
+
+Path DFFSR_5/CLK to DFFPOSX1_8/D delay 1284.32 ps
+      0.0 ps                       clk:              ->    DFFSR_5/CLK
+    417.0 ps  i_start_req_gen_n_req_3_:    DFFSR_5/Q -> NAND3X1_18/B
+    554.1 ps   i_ptr_seq_gen_start_vld: NAND3X1_18/Y ->  NAND2X1_9/A
+    749.7 ps                      _14_:  NAND2X1_9/Y ->    INVX4_1/A
+    937.1 ps                      _15_:    INVX4_1/Y ->   AND2X2_8/A
+   1059.9 ps      i_ptr_seq_gen_cur_7_:   AND2X2_8/Y -> DFFPOSX1_8/D
+
+Path DFFSR_5/CLK to DFFPOSX1_7/D delay 1284.32 ps
+      0.0 ps                       clk:              ->    DFFSR_5/CLK
+    417.0 ps  i_start_req_gen_n_req_3_:    DFFSR_5/Q -> NAND3X1_18/B
+    554.1 ps   i_ptr_seq_gen_start_vld: NAND3X1_18/Y ->  NAND2X1_9/A
+    749.7 ps                      _14_:  NAND2X1_9/Y ->    INVX4_1/A
+    937.1 ps                      _15_:    INVX4_1/Y ->   AND2X2_7/A
+   1059.9 ps      i_ptr_seq_gen_cur_6_:   AND2X2_7/Y -> DFFPOSX1_7/D
+
+Path DFFSR_5/CLK to DFFPOSX1_6/D delay 1284.32 ps
+      0.0 ps                       clk:              ->    DFFSR_5/CLK
+    417.0 ps  i_start_req_gen_n_req_3_:    DFFSR_5/Q -> NAND3X1_18/B
+    554.1 ps   i_ptr_seq_gen_start_vld: NAND3X1_18/Y ->  NAND2X1_9/A
+    749.7 ps                      _14_:  NAND2X1_9/Y ->    INVX4_1/A
+    937.1 ps                      _15_:    INVX4_1/Y ->   AND2X2_6/A
+   1059.9 ps      i_ptr_seq_gen_cur_5_:   AND2X2_6/Y -> DFFPOSX1_6/D
+
+Path DFFSR_5/CLK to DFFPOSX1_5/D delay 1284.32 ps
+      0.0 ps                       clk:              ->    DFFSR_5/CLK
+    417.0 ps  i_start_req_gen_n_req_3_:    DFFSR_5/Q -> NAND3X1_18/B
+    554.1 ps   i_ptr_seq_gen_start_vld: NAND3X1_18/Y ->  NAND2X1_9/A
+    749.7 ps                      _14_:  NAND2X1_9/Y ->    INVX4_1/A
+    937.1 ps                      _15_:    INVX4_1/Y ->   AND2X2_5/A
+   1059.9 ps      i_ptr_seq_gen_cur_4_:   AND2X2_5/Y -> DFFPOSX1_5/D
+
+Design meets minimum hold timing.
+-----------------------------------------
+
+Number of paths analyzed:  18
+
+Top 18 maximum delay paths:
+Path input pin rst to DFFSR_2/R delay 149.48 ps
+      0.0 ps   rst:           -> INVX2_2/A
+    149.5 ps  _86_: INVX2_2/Y -> DFFSR_2/R
+
+Path input pin rst to DFFSR_3/R delay 149.48 ps
+      0.0 ps   rst:           -> INVX2_2/A
+    149.5 ps  _86_: INVX2_2/Y -> DFFSR_3/R
+
+Path input pin rst to DFFSR_4/R delay 149.48 ps
+      0.0 ps   rst:           -> INVX2_2/A
+    149.5 ps  _86_: INVX2_2/Y -> DFFSR_4/R
+
+Path input pin rst to DFFSR_5/R delay 149.48 ps
+      0.0 ps   rst:           -> INVX2_2/A
+    149.5 ps  _86_: INVX2_2/Y -> DFFSR_5/R
+
+Path input pin rst to DFFSR_1/R delay 81.5193 ps
+      0.0 ps  rst:            -> INVX1_12/A
+     81.5 ps  _6_: INVX1_12/Y ->  DFFSR_1/R
+
+Path input pin clk to DFFPOSX1_1/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFPOSX1_1/CLK
+
+Path input pin clk to DFFPOSX1_2/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFPOSX1_2/CLK
+
+Path input pin clk to DFFPOSX1_3/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFPOSX1_3/CLK
+
+Path input pin clk to DFFPOSX1_4/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFPOSX1_4/CLK
+
+Path input pin clk to DFFPOSX1_5/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFPOSX1_5/CLK
+
+Path input pin clk to DFFPOSX1_6/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFPOSX1_6/CLK
+
+Path input pin clk to DFFPOSX1_7/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFPOSX1_7/CLK
+
+Path input pin clk to DFFPOSX1_8/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFPOSX1_8/CLK
+
+Path input pin clk to DFFSR_1/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFSR_1/CLK
+
+Path input pin clk to DFFSR_2/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFSR_2/CLK
+
+Path input pin clk to DFFSR_3/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFSR_3/CLK
+
+Path input pin clk to DFFSR_4/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFSR_4/CLK
+
+Path input pin clk to DFFSR_5/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFSR_5/CLK
+
+-----------------------------------------
+
+Number of paths analyzed:  18
+
+Top 18 minimum delay paths:
+Path input pin clk to DFFSR_5/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFSR_5/CLK
+
+Path input pin clk to DFFSR_4/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFSR_4/CLK
+
+Path input pin clk to DFFSR_3/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFSR_3/CLK
+
+Path input pin clk to DFFSR_2/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFSR_2/CLK
+
+Path input pin clk to DFFSR_1/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFSR_1/CLK
+
+Path input pin clk to DFFPOSX1_8/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFPOSX1_8/CLK
+
+Path input pin clk to DFFPOSX1_7/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFPOSX1_7/CLK
+
+Path input pin clk to DFFPOSX1_6/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFPOSX1_6/CLK
+
+Path input pin clk to DFFPOSX1_5/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFPOSX1_5/CLK
+
+Path input pin clk to DFFPOSX1_4/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFPOSX1_4/CLK
+
+Path input pin clk to DFFPOSX1_3/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFPOSX1_3/CLK
+
+Path input pin clk to DFFPOSX1_2/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFPOSX1_2/CLK
+
+Path input pin clk to DFFPOSX1_1/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFPOSX1_1/CLK
+
+Path input pin rst to DFFSR_1/R delay 81.5193 ps
+      0.0 ps  rst:            -> INVX1_12/A
+     81.5 ps  _6_: INVX1_12/Y ->  DFFSR_1/R
+
+Path input pin rst to DFFSR_5/R delay 149.48 ps
+      0.0 ps   rst:           -> INVX2_2/A
+    149.5 ps  _86_: INVX2_2/Y -> DFFSR_5/R
+
+Path input pin rst to DFFSR_4/R delay 149.48 ps
+      0.0 ps   rst:           -> INVX2_2/A
+    149.5 ps  _86_: INVX2_2/Y -> DFFSR_4/R
+
+Path input pin rst to DFFSR_3/R delay 149.48 ps
+      0.0 ps   rst:           -> INVX2_2/A
+    149.5 ps  _86_: INVX2_2/Y -> DFFSR_3/R
+
+Path input pin rst to DFFSR_2/R delay 149.48 ps
+      0.0 ps   rst:           -> INVX2_2/A
+    149.5 ps  _86_: INVX2_2/Y -> DFFSR_2/R
+
+-----------------------------------------
+

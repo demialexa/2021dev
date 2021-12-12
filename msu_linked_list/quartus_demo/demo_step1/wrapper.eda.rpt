@@ -1,0 +1,622 @@
+EDA Netlist Writer report for wrapper
+Mon Sep 13 18:26:51 2021
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. EDA Netlist Writer Summary
+  3. Simulation Settings
+  4. Simulation Generated Files
+  5. Board-Level Settings
+  6. Board-Level Generated Files
+  7. EDA Netlist Writer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; EDA Netlist Writer Summary                                                    ;
++---------------------------------------+---------------------------------------+
+; EDA Netlist Writer Status             ; Successful - Mon Sep 13 18:26:50 2021 ;
+; Revision Name                         ; wrapper                               ;
+; Top-level Entity Name                 ; wrapper                               ;
+; Family                                ; Cyclone V                             ;
+; Simulation Files Creation             ; Successful                            ;
+; Board Signal Integrity Files Creation ; Successful                            ;
+; Board Timing Analysis Files Creation  ; Successful                            ;
+; Board Boundary Scan Files Creation    ; Successful                            ;
++---------------------------------------+---------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Settings                                                                                                           ;
++---------------------------------------------------------------------------------------------------+---------------------------+
+; Option                                                                                            ; Setting                   ;
++---------------------------------------------------------------------------------------------------+---------------------------+
+; Tool Name                                                                                         ; ModelSim-Altera (Verilog) ;
+; Generate functional simulation netlist                                                            ; Off                       ;
+; Time scale                                                                                        ; 1 ps                      ;
+; Truncate long hierarchy paths                                                                     ; Off                       ;
+; Map illegal HDL characters                                                                        ; Off                       ;
+; Flatten buses into individual nodes                                                               ; Off                       ;
+; Maintain hierarchy                                                                                ; Off                       ;
+; Bring out device-wide set/reset signals as ports                                                  ; Off                       ;
+; Enable glitch filtering                                                                           ; Off                       ;
+; Do not write top level VHDL entity                                                                ; Off                       ;
+; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                       ;
+; Architecture name in VHDL output netlist                                                          ; structure                 ;
+; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                       ;
+; Generate third-party EDA tool command script for gate-level simulation                            ; Off                       ;
++---------------------------------------------------------------------------------------------------+---------------------------+
+
+
++----------------------------------------------------------+
+; Simulation Generated Files                               ;
++----------------------------------------------------------+
+; Generated Files                                          ;
++----------------------------------------------------------+
+; E:/projects/circuits/demo/simulation/modelsim/wrapper.vo ;
++----------------------------------------------------------+
+
+
++-----------------------------------------+
+; Board-Level Settings                    ;
++-------------------------------+---------+
+; Option                        ; Setting ;
++-------------------------------+---------+
+; Board Signal Integrity Format ; HSPICE  ;
+; Board Timing Analysis Format  ; STAMP   ;
+; Board Boundary Scan Format    ; BSDL    ;
++-------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Board-Level Generated Files                                                                                              ;
++--------------------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                                          ;
++--------------------------------------------------------------------------------------------------------------------------+
+; Board Signal Integrity                                                                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_h13_clock2_50_in.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_e10_clock3_50_in.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_v15_clock4_50_in.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_u7_key_0__in.sp                                                        ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_w9_key_1__in.sp                                                        ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_m7_key_2__in.sp                                                        ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_m6_key_3__in.sp                                                        ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_u13_sw_0__in.sp                                                        ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_v13_sw_1__in.sp                                                        ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_t13_sw_2__in.sp                                                        ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_t12_sw_3__in.sp                                                        ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_aa15_sw_4__in.sp                                                       ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_ab15_sw_5__in.sp                                                       ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_aa14_sw_6__in.sp                                                       ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_aa13_sw_7__in.sp                                                       ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_ab13_sw_8__in.sp                                                       ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_ab12_sw_9__in.sp                                                       ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_aa2_ledr_0__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_aa1_ledr_1__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_w2_ledr_2__out.sp                                                      ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_y3_ledr_3__out.sp                                                      ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_n2_ledr_4__out.sp                                                      ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_n1_ledr_5__out.sp                                                      ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_u2_ledr_6__out.sp                                                      ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_u1_ledr_7__out.sp                                                      ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_l2_ledr_8__out.sp                                                      ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_l1_ledr_9__out.sp                                                      ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_u21_hex0_0__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_v21_hex0_1__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_w22_hex0_2__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_w21_hex0_3__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_y22_hex0_4__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_y21_hex0_5__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_aa22_hex0_6__out.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_r7_hex0_7__out.sp                                                      ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_aa20_hex1_0__out.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_ab20_hex1_1__out.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_aa19_hex1_2__out.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_aa18_hex1_3__out.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_ab18_hex1_4__out.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_aa17_hex1_5__out.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_u22_hex1_6__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_w8_hex1_7__out.sp                                                      ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_y19_hex2_0__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_ab17_hex2_1__out.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_aa10_hex2_2__out.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_y14_hex2_3__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_v14_hex2_4__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_ab22_hex2_5__out.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_ab21_hex2_6__out.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_p6_hex2_7__out.sp                                                      ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_y16_hex3_0__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_w16_hex3_1__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_y17_hex3_2__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_v16_hex3_3__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_u17_hex3_4__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_v18_hex3_5__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_v19_hex3_6__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_u6_hex3_7__out.sp                                                      ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_u20_hex4_0__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_y20_hex4_1__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_v20_hex4_2__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_u16_hex4_3__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_u15_hex4_4__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_y15_hex4_5__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_p9_hex4_6__out.sp                                                      ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_v6_hex4_7__out.sp                                                      ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_n9_hex5_0__out.sp                                                      ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_m8_hex5_1__out.sp                                                      ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_t14_hex5_2__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_p14_hex5_3__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_c1_hex5_4__out.sp                                                      ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_c2_hex5_5__out.sp                                                      ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_w19_hex5_6__out.sp                                                     ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_p7_hex5_7__out.sp                                                      ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_n16_gpio_0_0__out.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_n16_gpio_0_0__in.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_b16_gpio_0_1__out.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_b16_gpio_0_1__in.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_m16_gpio_0_2__out.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_m16_gpio_0_2__in.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_c16_gpio_0_3__out.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_c16_gpio_0_3__in.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_d17_gpio_0_4__out.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_d17_gpio_0_4__in.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_k20_gpio_0_5__out.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_k20_gpio_0_5__in.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_k21_gpio_0_6__out.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_k21_gpio_0_6__in.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_k22_gpio_0_7__out.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_k22_gpio_0_7__in.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_m20_gpio_0_8__out.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_m20_gpio_0_8__in.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_m21_gpio_0_9__out.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_m21_gpio_0_9__in.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_n21_gpio_0_10__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_n21_gpio_0_10__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_r22_gpio_0_11__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_r22_gpio_0_11__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_r21_gpio_0_12__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_r21_gpio_0_12__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_t22_gpio_0_13__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_t22_gpio_0_13__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_n20_gpio_0_14__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_n20_gpio_0_14__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_n19_gpio_0_15__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_n19_gpio_0_15__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_m22_gpio_0_16__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_m22_gpio_0_16__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_p19_gpio_0_17__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_p19_gpio_0_17__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_l22_gpio_0_18__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_l22_gpio_0_18__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_p17_gpio_0_19__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_p17_gpio_0_19__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_p16_gpio_0_20__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_p16_gpio_0_20__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_m18_gpio_0_21__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_m18_gpio_0_21__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_l18_gpio_0_22__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_l18_gpio_0_22__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_l17_gpio_0_23__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_l17_gpio_0_23__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_l19_gpio_0_24__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_l19_gpio_0_24__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_k17_gpio_0_25__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_k17_gpio_0_25__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_k19_gpio_0_26__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_k19_gpio_0_26__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_p18_gpio_0_27__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_p18_gpio_0_27__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_r15_gpio_0_28__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_r15_gpio_0_28__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_r17_gpio_0_29__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_r17_gpio_0_29__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_r16_gpio_0_30__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_r16_gpio_0_30__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_t20_gpio_0_31__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_t20_gpio_0_31__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_t19_gpio_0_32__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_t19_gpio_0_32__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_t18_gpio_0_33__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_t18_gpio_0_33__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_t17_gpio_0_34__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_t17_gpio_0_34__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_t15_gpio_0_35__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_t15_gpio_0_35__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_h16_gpio_1_0__out.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_h16_gpio_1_0__in.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_a12_gpio_1_1__out.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_a12_gpio_1_1__in.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_h15_gpio_1_2__out.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_h15_gpio_1_2__in.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_b12_gpio_1_3__out.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_b12_gpio_1_3__in.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_a13_gpio_1_4__out.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_a13_gpio_1_4__in.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_b13_gpio_1_5__out.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_b13_gpio_1_5__in.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_c13_gpio_1_6__out.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_c13_gpio_1_6__in.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_d13_gpio_1_7__out.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_d13_gpio_1_7__in.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_g18_gpio_1_8__out.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_g18_gpio_1_8__in.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_g17_gpio_1_9__out.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_g17_gpio_1_9__in.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_h18_gpio_1_10__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_h18_gpio_1_10__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_j18_gpio_1_11__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_j18_gpio_1_11__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_j19_gpio_1_12__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_j19_gpio_1_12__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_g11_gpio_1_13__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_g11_gpio_1_13__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_h10_gpio_1_14__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_h10_gpio_1_14__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_j11_gpio_1_15__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_j11_gpio_1_15__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_h14_gpio_1_16__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_h14_gpio_1_16__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_a15_gpio_1_17__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_a15_gpio_1_17__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_j13_gpio_1_18__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_j13_gpio_1_18__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_l8_gpio_1_19__out.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_l8_gpio_1_19__in.sp                                                    ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_a14_gpio_1_20__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_a14_gpio_1_20__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_b15_gpio_1_21__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_b15_gpio_1_21__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_c15_gpio_1_22__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_c15_gpio_1_22__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_e14_gpio_1_23__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_e14_gpio_1_23__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_e15_gpio_1_24__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_e15_gpio_1_24__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_e16_gpio_1_25__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_e16_gpio_1_25__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_f14_gpio_1_26__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_f14_gpio_1_26__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_f15_gpio_1_27__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_f15_gpio_1_27__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_f13_gpio_1_28__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_f13_gpio_1_28__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_f12_gpio_1_29__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_f12_gpio_1_29__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_g16_gpio_1_30__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_g16_gpio_1_30__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_g15_gpio_1_31__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_g15_gpio_1_31__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_g13_gpio_1_32__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_g13_gpio_1_32__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_g12_gpio_1_33__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_g12_gpio_1_33__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_j17_gpio_1_34__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_j17_gpio_1_34__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_k16_gpio_1_35__out.sp                                                  ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_k16_gpio_1_35__in.sp                                                   ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_m9_clock_50_in.sp                                                      ;
+;     E:/projects/circuits/demo/board/hspice/5ceba4_p22_reset_n_in.sp                                                      ;
+;     E:/projects/circuits/demo/board/hspice/lib/io_octrt_calibrated.lib                                                   ;
+;     E:/projects/circuits/demo/board/hspice/lib/output_delay_control.lib                                                  ;
+;     E:/projects/circuits/demo/board/hspice/lib/drive_select_io.lib                                                       ;
+;     E:/projects/circuits/demo/board/hspice/lib/cv_ff.inc                                                                 ;
+;     E:/projects/circuits/demo/board/hspice/cir/lvds_input_load.inc                                                       ;
+;     E:/projects/circuits/demo/board/hspice/cir/lvds_oct_rd.inc                                                           ;
+;     E:/projects/circuits/demo/board/hspice/cir/lvds_output.inc                                                           ;
+;     E:/projects/circuits/demo/board/hspice/cir/io_buffer_load.inc                                                        ;
+;     E:/projects/circuits/demo/board/hspice/cir/io_buffer_octrs.inc                                                       ;
+;     E:/projects/circuits/demo/board/hspice/cir/io_buffer_octrt.inc                                                       ;
+;     E:/projects/circuits/demo/board/hspice/lib/slew_rate_control.lib                                                     ;
+;     E:/projects/circuits/demo/board/hspice/lib/io_load.lib                                                               ;
+;     E:/projects/circuits/demo/board/hspice/lib/io_octrs_calibrated.lib                                                   ;
+;     E:/projects/circuits/demo/board/hspice/lib/lvds_vod_select.lib                                                       ;
+;     E:/projects/circuits/demo/board/hspice/lib/lvds_preemphasis_select.lib                                               ;
+;     E:/projects/circuits/demo/board/hspice/lib/package.lib                                                               ;
+;     E:/projects/circuits/demo/board/hspice/lib/cv_tt.inc                                                                 ;
+;     E:/projects/circuits/demo/board/hspice/lib/cv_ss.inc                                                                 ;
+;     E:/projects/circuits/demo/board/hspice/cir/lvds_oct_load.inc                                                         ;
+;     E:/projects/circuits/demo/board/hspice/cir/lvds_output_load.inc                                                      ;
+;     E:/projects/circuits/demo/board/hspice/cir/io_buffer.inc                                                             ;
+; Board Timing Analysis                                                                                                    ;
+;     E:/projects/circuits/demo/timing/stamp/E:/projects/circuits/demo/timing/stamp//wrapper_7_1100mv_85c_board_slow.mod   ;
+;     E:/projects/circuits/demo/timing/stamp/E:/projects/circuits/demo/timing/stamp//wrapper_7_1100mv_85c_board_slow.data  ;
+;     E:/projects/circuits/demo/timing/stamp/E:/projects/circuits/demo/timing/stamp//wrapper_min_1100mv_0c_board_fast.mod  ;
+;     E:/projects/circuits/demo/timing/stamp/E:/projects/circuits/demo/timing/stamp//wrapper_min_1100mv_0c_board_fast.data ;
+;     E:/projects/circuits/demo/timing/stamp/E:/projects/circuits/demo/timing/stamp//wrapper_board.mod                     ;
+;     E:/projects/circuits/demo/timing/stamp/E:/projects/circuits/demo/timing/stamp//wrapper_board.data                    ;
+; Board Boundary Scan                                                                                                      ;
+;     E:/projects/circuits/demo/board/bsd/5CEBA4F23C7_pre.bsd                                                              ;
++--------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------+
+; EDA Netlist Writer Messages ;
++-----------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime EDA Netlist Writer
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Mon Sep 13 18:26:48 2021
+Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off linked_list -c wrapper
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Warning (10905): Generated the EDA functional simulation netlist because it is the only supported netlist type for this device.
+Info (204019): Generated file wrapper.vo in folder "E:/projects/circuits/demo/simulation/modelsim/" for EDA simulation tool
+Info (199047): Generated files "E:/projects/circuits/demo/timing/stamp//wrapper_7_1100mv_85c_board_slow.mod" and "E:/projects/circuits/demo/timing/stamp//wrapper_7_1100mv_85c_board_slow.data"
+Info (199047): Generated files "E:/projects/circuits/demo/timing/stamp//wrapper_min_1100mv_0c_board_fast.mod" and "E:/projects/circuits/demo/timing/stamp//wrapper_min_1100mv_0c_board_fast.data"
+Info (199047): Generated files "E:/projects/circuits/demo/timing/stamp//wrapper_board.mod" and "E:/projects/circuits/demo/timing/stamp//wrapper_board.data"
+Info (199053): Generated 242 HSPICE Output files for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_h13_clock2_50_in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_e10_clock3_50_in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_v15_clock4_50_in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_u7_key_0__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_w9_key_1__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_m7_key_2__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_m6_key_3__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_u13_sw_0__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_v13_sw_1__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_t13_sw_2__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_t12_sw_3__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_aa15_sw_4__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_ab15_sw_5__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_aa14_sw_6__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_aa13_sw_7__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_ab13_sw_8__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_ab12_sw_9__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_aa2_ledr_0__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_aa1_ledr_1__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_w2_ledr_2__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_y3_ledr_3__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_n2_ledr_4__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_n1_ledr_5__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_u2_ledr_6__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_u1_ledr_7__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_l2_ledr_8__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_l1_ledr_9__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_u21_hex0_0__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_v21_hex0_1__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_w22_hex0_2__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_w21_hex0_3__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_y22_hex0_4__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_y21_hex0_5__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_aa22_hex0_6__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_r7_hex0_7__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_aa20_hex1_0__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_ab20_hex1_1__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_aa19_hex1_2__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_aa18_hex1_3__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_ab18_hex1_4__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_aa17_hex1_5__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_u22_hex1_6__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_w8_hex1_7__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_y19_hex2_0__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_ab17_hex2_1__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_aa10_hex2_2__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_y14_hex2_3__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_v14_hex2_4__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_ab22_hex2_5__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_ab21_hex2_6__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_p6_hex2_7__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_y16_hex3_0__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_w16_hex3_1__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_y17_hex3_2__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_v16_hex3_3__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_u17_hex3_4__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_v18_hex3_5__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_v19_hex3_6__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_u6_hex3_7__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_u20_hex4_0__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_y20_hex4_1__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_v20_hex4_2__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_u16_hex4_3__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_u15_hex4_4__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_y15_hex4_5__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_p9_hex4_6__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_v6_hex4_7__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_n9_hex5_0__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_m8_hex5_1__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_t14_hex5_2__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_p14_hex5_3__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_c1_hex5_4__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_c2_hex5_5__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_w19_hex5_6__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_p7_hex5_7__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_n16_gpio_0_0__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_n16_gpio_0_0__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_b16_gpio_0_1__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_b16_gpio_0_1__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_m16_gpio_0_2__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_m16_gpio_0_2__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_c16_gpio_0_3__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_c16_gpio_0_3__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_d17_gpio_0_4__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_d17_gpio_0_4__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_k20_gpio_0_5__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_k20_gpio_0_5__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_k21_gpio_0_6__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_k21_gpio_0_6__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_k22_gpio_0_7__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_k22_gpio_0_7__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_m20_gpio_0_8__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_m20_gpio_0_8__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_m21_gpio_0_9__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_m21_gpio_0_9__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_n21_gpio_0_10__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_n21_gpio_0_10__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_r22_gpio_0_11__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_r22_gpio_0_11__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_r21_gpio_0_12__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_r21_gpio_0_12__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_t22_gpio_0_13__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_t22_gpio_0_13__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_n20_gpio_0_14__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_n20_gpio_0_14__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_n19_gpio_0_15__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_n19_gpio_0_15__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_m22_gpio_0_16__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_m22_gpio_0_16__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_p19_gpio_0_17__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_p19_gpio_0_17__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_l22_gpio_0_18__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_l22_gpio_0_18__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_p17_gpio_0_19__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_p17_gpio_0_19__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_p16_gpio_0_20__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_p16_gpio_0_20__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_m18_gpio_0_21__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_m18_gpio_0_21__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_l18_gpio_0_22__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_l18_gpio_0_22__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_l17_gpio_0_23__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_l17_gpio_0_23__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_l19_gpio_0_24__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_l19_gpio_0_24__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_k17_gpio_0_25__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_k17_gpio_0_25__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_k19_gpio_0_26__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_k19_gpio_0_26__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_p18_gpio_0_27__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_p18_gpio_0_27__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_r15_gpio_0_28__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_r15_gpio_0_28__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_r17_gpio_0_29__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_r17_gpio_0_29__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_r16_gpio_0_30__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_r16_gpio_0_30__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_t20_gpio_0_31__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_t20_gpio_0_31__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_t19_gpio_0_32__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_t19_gpio_0_32__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_t18_gpio_0_33__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_t18_gpio_0_33__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_t17_gpio_0_34__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_t17_gpio_0_34__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_t15_gpio_0_35__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_t15_gpio_0_35__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_h16_gpio_1_0__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_h16_gpio_1_0__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_a12_gpio_1_1__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_a12_gpio_1_1__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_h15_gpio_1_2__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_h15_gpio_1_2__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_b12_gpio_1_3__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_b12_gpio_1_3__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_a13_gpio_1_4__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_a13_gpio_1_4__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_b13_gpio_1_5__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_b13_gpio_1_5__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_c13_gpio_1_6__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_c13_gpio_1_6__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_d13_gpio_1_7__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_d13_gpio_1_7__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_g18_gpio_1_8__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_g18_gpio_1_8__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_g17_gpio_1_9__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_g17_gpio_1_9__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_h18_gpio_1_10__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_h18_gpio_1_10__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_j18_gpio_1_11__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_j18_gpio_1_11__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_j19_gpio_1_12__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_j19_gpio_1_12__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_g11_gpio_1_13__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_g11_gpio_1_13__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_h10_gpio_1_14__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_h10_gpio_1_14__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_j11_gpio_1_15__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_j11_gpio_1_15__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_h14_gpio_1_16__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_h14_gpio_1_16__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_a15_gpio_1_17__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_a15_gpio_1_17__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_j13_gpio_1_18__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_j13_gpio_1_18__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_l8_gpio_1_19__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_l8_gpio_1_19__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_a14_gpio_1_20__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_a14_gpio_1_20__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_b15_gpio_1_21__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_b15_gpio_1_21__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_c15_gpio_1_22__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_c15_gpio_1_22__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_e14_gpio_1_23__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_e14_gpio_1_23__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_e15_gpio_1_24__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_e15_gpio_1_24__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_e16_gpio_1_25__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_e16_gpio_1_25__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_f14_gpio_1_26__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_f14_gpio_1_26__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_f15_gpio_1_27__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_f15_gpio_1_27__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_f13_gpio_1_28__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_f13_gpio_1_28__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_f12_gpio_1_29__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_f12_gpio_1_29__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_g16_gpio_1_30__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_g16_gpio_1_30__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_g15_gpio_1_31__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_g15_gpio_1_31__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_g13_gpio_1_32__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_g13_gpio_1_32__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_g12_gpio_1_33__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_g12_gpio_1_33__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_j17_gpio_1_34__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_j17_gpio_1_34__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_k16_gpio_1_35__out.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_k16_gpio_1_35__in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_m9_clock_50_in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/5ceba4_p22_reset_n_in.sp for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/lib/io_octrt_calibrated.lib for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/lib/output_delay_control.lib for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/lib/drive_select_io.lib for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/lib/cv_ff.inc for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/cir/lvds_input_load.inc for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/cir/lvds_oct_rd.inc for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/cir/lvds_output.inc for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/cir/io_buffer_load.inc for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/cir/io_buffer_octrs.inc for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/cir/io_buffer_octrt.inc for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/lib/slew_rate_control.lib for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/lib/io_load.lib for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/lib/io_octrs_calibrated.lib for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/lib/lvds_vod_select.lib for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/lib/lvds_preemphasis_select.lib for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/lib/package.lib for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/lib/cv_tt.inc for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/lib/cv_ss.inc for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/cir/lvds_oct_load.inc for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/cir/lvds_output_load.inc for board level analysis
+    Info (199051): Generated HSPICE Output File E:/projects/circuits/demo/board/hspice/cir/io_buffer.inc for board level analysis
+Info: TOTAL BSCAN REGISTERS IS 288
+Info: TOTAL IO PAD COUNT IS 272
+Info: CYCLONE_V_5CEBA4F23 has 239 JTAG SEQUENCE AVAILABLE
+Info (199065): Generated Boundary-Scan Description Language output file E:/projects/circuits/demo/board/bsd/5CEBA4F23C7_pre.bsd for board-level analysis
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4740 megabytes
+    Info: Processing ended: Mon Sep 13 18:26:51 2021
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+
+

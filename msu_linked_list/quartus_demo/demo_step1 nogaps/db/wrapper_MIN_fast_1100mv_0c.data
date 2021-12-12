@@ -1,0 +1,212 @@
+
+
+
+TIMINGDATA
+
+ARCDATA
+pos_clk_divider:i_clk_divider|cnt[23]__HEX0[0]__delay:
+CELL_RISE( scalar ) {
+VALUES ("4.089");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("4.089");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk_divider:i_clk_divider|cnt[23]__HEX0[1]__delay:
+CELL_RISE( scalar ) {
+VALUES ("4.080");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("4.080");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk_divider:i_clk_divider|cnt[23]__HEX0[2]__delay:
+CELL_RISE( scalar ) {
+VALUES ("3.959");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("3.959");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk_divider:i_clk_divider|cnt[23]__HEX0[3]__delay:
+CELL_RISE( scalar ) {
+VALUES ("4.062");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("4.062");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk_divider:i_clk_divider|cnt[23]__HEX0[4]__delay:
+CELL_RISE( scalar ) {
+VALUES ("3.888");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("3.888");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk_divider:i_clk_divider|cnt[23]__HEX0[5]__delay:
+CELL_RISE( scalar ) {
+VALUES ("3.900");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("3.900");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk_divider:i_clk_divider|cnt[23]__HEX0[6]__delay:
+CELL_RISE( scalar ) {
+VALUES ("4.037");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("4.037");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk_divider:i_clk_divider|cnt[23]__HEX1[0]__delay:
+CELL_RISE( scalar ) {
+VALUES ("3.729");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("3.729");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk_divider:i_clk_divider|cnt[23]__HEX1[1]__delay:
+CELL_RISE( scalar ) {
+VALUES ("3.683");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("3.683");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk_divider:i_clk_divider|cnt[23]__HEX1[2]__delay:
+CELL_RISE( scalar ) {
+VALUES ("3.699");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("3.699");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk_divider:i_clk_divider|cnt[23]__HEX1[3]__delay:
+CELL_RISE( scalar ) {
+VALUES ("3.673");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("3.673");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk_divider:i_clk_divider|cnt[23]__HEX1[4]__delay:
+CELL_RISE( scalar ) {
+VALUES ("3.558");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("3.558");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk_divider:i_clk_divider|cnt[23]__HEX1[5]__delay:
+CELL_RISE( scalar ) {
+VALUES ("3.696");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("3.696");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk_divider:i_clk_divider|cnt[23]__HEX1[6]__delay:
+CELL_RISE( scalar ) {
+VALUES ("3.831");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("3.831");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk_divider:i_clk_divider|cnt[23]__LEDR[0]__delay:
+CELL_RISE( scalar ) {
+VALUES ("4.256");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("4.256");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk_divider:i_clk_divider|cnt[23]__LEDR[9]__delay:
+CELL_RISE( scalar ) {
+VALUES ("4.549");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("4.549");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk_divider:i_clk_divider|cnt[23]__LEDR[9]__delay:
+CELL_RISE( scalar ) {
+VALUES ("");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("");
+}
+
+ENDARCDATA
+
+ENDTIMINGDATA
+
+ENDMODELDATA

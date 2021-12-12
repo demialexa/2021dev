@@ -1,0 +1,179 @@
+/*
+ Copyright (C) 2020  Intel Corporation. All rights reserved.
+ Your use of Intel Corporation's design tools, logic functions 
+ and other software and tools, and any partner logic 
+ functions, and any output files from any of the foregoing 
+ (including device programming or simulation files), and any 
+ associated documentation or information are expressly subject 
+ to the terms and conditions of the Intel Program License 
+ Subscription Agreement, the Intel Quartus Prime License Agreement,
+ the Intel FPGA IP License Agreement, or other applicable license
+ agreement, including, without limitation, that your use is for
+ the sole purpose of programming logic devices manufactured by
+ Intel and sold by Intel or its authorized distributors.  Please
+ refer to the applicable agreement for further details, at
+ https://fpgasoftware.intel.com/eula.
+*/
+MODELDATA
+/*MODELDATA HEADER*/
+/*
+ This file contains Fast Corner delays for the design using part 5CEBA4F23C7
+ with speed grade M, core voltage 1.1V, and temperature 85 Celsius
+
+*/
+DESIGN "wrapper";
+TIMESCALE "1ns";
+
+
+
+
+
+TIMINGDATA
+
+ARCDATA
+pos_CLOCK_50__LEDR[1]__delay:
+CELL_RISE( scalar ) {
+VALUES ("4.142");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("4.142");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_CLOCK_50__LEDR[1]__delay:
+CELL_RISE( scalar ) {
+VALUES ("4.142");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("4.142");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk_divider:i_clk_divider|cnt[9]__HEX0[0]__delay:
+CELL_RISE( scalar ) {
+VALUES ("4.126");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("4.126");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk_divider:i_clk_divider|cnt[9]__HEX0[1]__delay:
+CELL_RISE( scalar ) {
+VALUES ("4.164");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("4.164");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk_divider:i_clk_divider|cnt[9]__HEX0[2]__delay:
+CELL_RISE( scalar ) {
+VALUES ("3.996");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("3.996");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk_divider:i_clk_divider|cnt[9]__HEX0[3]__delay:
+CELL_RISE( scalar ) {
+VALUES ("4.060");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("4.060");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk_divider:i_clk_divider|cnt[9]__HEX0[4]__delay:
+CELL_RISE( scalar ) {
+VALUES ("3.961");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("3.961");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk_divider:i_clk_divider|cnt[9]__HEX0[5]__delay:
+CELL_RISE( scalar ) {
+VALUES ("3.987");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("3.987");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk_divider:i_clk_divider|cnt[9]__HEX0[6]__delay:
+CELL_RISE( scalar ) {
+VALUES ("4.234");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("4.234");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk_divider:i_clk_divider|cnt[9]__LEDR[0]__delay:
+CELL_RISE( scalar ) {
+VALUES ("4.417");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("4.417");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk_divider:i_clk_divider|cnt[9]__LEDR[2]__delay:
+CELL_RISE( scalar ) {
+VALUES ("4.615");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("4.615");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk_divider:i_clk_divider|cnt[9]__LEDR[2]__delay:
+CELL_RISE( scalar ) {
+VALUES ("");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("");
+}
+
+ENDARCDATA
+
+ENDTIMINGDATA
+
+ENDMODELDATA

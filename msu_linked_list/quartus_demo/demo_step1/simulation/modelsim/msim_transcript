@@ -1,0 +1,160 @@
+# Reading pref.tcl
+# do wrapper_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying E:/program_files/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+E:/projects/circuits/demo/V {E:/projects/circuits/demo/V/wrapper.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:09:56 on Sep 13,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/projects/circuits/demo/V" E:/projects/circuits/demo/V/wrapper.v 
+# -- Compiling module wrapper
+# 
+# Top level modules:
+# 	wrapper
+# End time: 19:09:56 on Sep 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/projects/circuits/demo/V {E:/projects/circuits/demo/V/strobe_generator.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:09:56 on Sep 13,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/projects/circuits/demo/V" E:/projects/circuits/demo/V/strobe_generator.v 
+# -- Compiling module strobe_generator
+# 
+# Top level modules:
+# 	strobe_generator
+# End time: 19:09:56 on Sep 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/projects/circuits/demo/V {E:/projects/circuits/demo/V/SEG7_LUT.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:09:57 on Sep 13,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/projects/circuits/demo/V" E:/projects/circuits/demo/V/SEG7_LUT.v 
+# -- Compiling module SEG7_LUT
+# 
+# Top level modules:
+# 	SEG7_LUT
+# End time: 19:09:57 on Sep 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/projects/circuits/demo/V {E:/projects/circuits/demo/V/clk_divider.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:09:57 on Sep 13,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/projects/circuits/demo/V" E:/projects/circuits/demo/V/clk_divider.v 
+# -- Compiling module clk_divider
+# 
+# Top level modules:
+# 	clk_divider
+# End time: 19:09:57 on Sep 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/projects/circuits/demo/V {E:/projects/circuits/demo/V/design.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:09:57 on Sep 13,2021
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/projects/circuits/demo/V" E:/projects/circuits/demo/V/design.sv 
+# -- Compiling package design_sv_unit
+# -- Compiling module start_req_gen
+# -- Compiling module ptr_seq_gen
+# -- Compiling module req_gen
+# 
+# Top level modules:
+# 	req_gen
+# End time: 19:09:57 on Sep 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+E:/projects/circuits/demo {E:/projects/circuits/demo/testbench.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:09:57 on Sep 13,2021
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/projects/circuits/demo" E:/projects/circuits/demo/testbench.sv 
+# ** Warning: E:/projects/circuits/demo/testbench.sv(12): (vlog-13304) Invalid use of Verilog config keyword 'include' found.
+# -- Compiling package testbench_sv_unit
+# -- Compiling module start_req_gen
+# -- Compiling module ptr_seq_gen
+# -- Compiling module req_gen
+# -- Compiling module test
+# 
+# Top level modules:
+# 	test
+# End time: 19:09:57 on Sep 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  test
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" test 
+# Start time: 19:09:58 on Sep 13,2021
+# Loading sv_std.std
+# Loading work.testbench_sv_unit
+# Loading work.test
+# Loading work.req_gen
+# Loading work.start_req_gen
+# Loading work.ptr_seq_gen
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+#           0 rst=1
+#           1 rst=1
+#           2 rst=0
+#           3 rst=0 7
+#           4 rst=015
+#           5 rst=0 8
+#           6 rst=0
+#           7 rst=0 6
+#           8 rst=0
+#           9 rst=0 2
+#          10 rst=0 4
+#          11 rst=0
+#          12 rst=0 1
+#          13 rst=0 5
+#          14 rst=0 3
+#          15 rst=010
+#          16 rst=0
+#          17 rst=0
+#          18 rst=0 9
+#          19 rst=014
+#          20 rst=011
+#          21 rst=013
+#          22 rst=012
+#          23 rst=0
+#          24 rst=0 9
+#          25 rst=014
+#          26 rst=011
+#          27 rst=013
+#          28 rst=012
+#          29 rst=0
+#          30 rst=0 9
+#          31 rst=014
+#          32 rst=011
+#          33 rst=013
+#          34 rst=012
+#          35 rst=0
+#          36 rst=0
+#          37 rst=0 9
+#          38 rst=014
+#          39 rst=011
+#          40 rst=013
+#          41 rst=012
+#          42 rst=0
+#          43 rst=0 9
+#          44 rst=014
+#          45 rst=011
+#          46 rst=013
+#          47 rst=012
+#          48 rst=0
+#          49 rst=0 9
+#          50 rst=014
+#          51 rst=011
+# ** Note: $finish    : E:/projects/circuits/demo/testbench.sv(32)
+#    Time: 515 ps  Iteration: 1  Instance: /test
+# 1
+# Break in Module test at E:/projects/circuits/demo/testbench.sv line 32
+add wave -position end  sim:/test/out_ptr
+add wave -position end  sim:/test/clk
+add wave -position end  sim:/test/rst
+add wave -position end  sim:/test/cycle
+# End time: 19:16:12 on Sep 13,2021, Elapsed time: 0:06:14
+# Errors: 0, Warnings: 0

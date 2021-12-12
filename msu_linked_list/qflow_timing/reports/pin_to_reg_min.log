@@ -1,0 +1,64 @@
+Vesta static timing analysis, pin-to-register and register-to-pin minimum timing
+
+Top 18 minimum delay paths:
+Path input pin clk to DFFSR_5/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFSR_5/CLK
+
+Path input pin clk to DFFSR_4/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFSR_4/CLK
+
+Path input pin clk to DFFSR_3/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFSR_3/CLK
+
+Path input pin clk to DFFSR_2/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFSR_2/CLK
+
+Path input pin clk to DFFSR_1/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFSR_1/CLK
+
+Path input pin clk to DFFPOSX1_8/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFPOSX1_8/CLK
+
+Path input pin clk to DFFPOSX1_7/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFPOSX1_7/CLK
+
+Path input pin clk to DFFPOSX1_6/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFPOSX1_6/CLK
+
+Path input pin clk to DFFPOSX1_5/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFPOSX1_5/CLK
+
+Path input pin clk to DFFPOSX1_4/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFPOSX1_4/CLK
+
+Path input pin clk to DFFPOSX1_3/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFPOSX1_3/CLK
+
+Path input pin clk to DFFPOSX1_2/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFPOSX1_2/CLK
+
+Path input pin clk to DFFPOSX1_1/CLK delay 0 ps
+      0.0 ps  clk:   -> DFFPOSX1_1/CLK
+
+Path input pin rst to DFFSR_1/R delay 81.5193 ps
+      0.0 ps  rst:            -> INVX1_12/A
+     81.5 ps  _6_: INVX1_12/Y ->  DFFSR_1/R
+
+Path input pin rst to DFFSR_5/R delay 149.48 ps
+      0.0 ps   rst:           -> INVX2_2/A
+    149.5 ps  _86_: INVX2_2/Y -> DFFSR_5/R
+
+Path input pin rst to DFFSR_4/R delay 149.48 ps
+      0.0 ps   rst:           -> INVX2_2/A
+    149.5 ps  _86_: INVX2_2/Y -> DFFSR_4/R
+
+Path input pin rst to DFFSR_3/R delay 149.48 ps
+      0.0 ps   rst:           -> INVX2_2/A
+    149.5 ps  _86_: INVX2_2/Y -> DFFSR_3/R
+
+Path input pin rst to DFFSR_2/R delay 149.48 ps
+      0.0 ps   rst:           -> INVX2_2/A
+    149.5 ps  _86_: INVX2_2/Y -> DFFSR_2/R
+
+-----------------------------------------
+

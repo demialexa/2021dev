@@ -1,0 +1,13 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+E:/projects/circuits/demo {E:/projects/circuits/demo/wrapper.v}
+vlog -vlog01compat -work work +incdir+E:/projects/circuits/demo {E:/projects/circuits/demo/strobe_generator.v}
+vlog -vlog01compat -work work +incdir+E:/projects/circuits/demo {E:/projects/circuits/demo/display_driver.v}
+vlog -vlog01compat -work work +incdir+E:/projects/circuits/demo {E:/projects/circuits/demo/clk_divider.v}
+vlog -sv -work work +incdir+E:/projects/circuits/demo {E:/projects/circuits/demo/design.sv}
+
